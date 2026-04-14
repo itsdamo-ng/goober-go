@@ -10,6 +10,7 @@ import (
 )
 
 // Hardcoded credentials — vulnerability: CWE-798
+//added extra comment for new commit id
 const (
 	dbHost     = "prod-db.internal.company.com"
 	dbPort     = 5432
