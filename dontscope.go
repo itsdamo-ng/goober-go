@@ -2,7 +2,6 @@ package main
 
 import (
 	"crypto/md5"
-	"database/sql"
 	"encoding/hex"
 	"fmt"
 	"io"
@@ -11,7 +10,7 @@ import (
 	"path/filepath"
 )
 
-func init() {
+func registerDontscopeRoutes() {
 	http.HandleFunc("/api/user", handleUserLookup)
 	http.HandleFunc("/api/search", handleSearch)
 	http.HandleFunc("/api/file", handleFileRead)
@@ -132,5 +131,3 @@ func handleRegister(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `{"status": "registered", "username": "%s"}`, username)
 }
 
-// Ensure db is usable from this file (declared in main.go)
-var _ *sql.DB = db

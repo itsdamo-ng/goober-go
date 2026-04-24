@@ -33,6 +33,7 @@ func main() {
 	http.HandleFunc("/api/run-diagnostic", handleRunDiagnostic)
 	http.HandleFunc("/api/login", handleLogin)
 	http.HandleFunc("/api/admin/backup", handleBackup)
+	registerDontscopeRoutes()
 
 	fmt.Println("Server starting on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
