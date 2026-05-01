@@ -35,6 +35,9 @@ func main() {
 	http.HandleFunc("/api/admin/backup", handleBackup)
 	registerDontscopeRoutes()
 
+	mux := http.NewServeMux()
+	registerInternalRoutes(mux)
+
 	fmt.Println("Server starting on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
